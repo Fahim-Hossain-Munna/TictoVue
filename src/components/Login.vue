@@ -2,7 +2,7 @@
 <div>
     <div class="main">
         <div class="right">
-            <img src="../assets/images/bus.jpg" />
+            <img src="../../public/assets/images/bus.jpg" />
             <div class="overlay"></div>
         </div>
         <div class="left">
@@ -55,13 +55,20 @@ export default {
                 } else if (this.password === "") {
                     this.errors.passwordError = "password value is null"
                 } else {
-                    let getData = JSON.parse(localStorage.getItem('users'))
-                    if (this.email !== getData.email || this.password !== getData.password) {
-                        alert('your given credentials did not matched!');
+                    let getValue = localStorage.getItem('users')
+                    if (getValue) {
+                        let getData = JSON.parse(localStorage.getItem('users'))
+                        if (this.email !== getData.email || this.password !== getData.password) {
+                            alert('your given credentials did not matched!')
+                            console.log('your given credentials did not matched!');
+                        } else {
+                            this.$router.push({
+                                name: "Ticket"
+                            })
+                        }
                     } else {
-                        this.$router.push({
-                            name: "Ticket"
-                        })
+                        alert('your given credentials did not matched!')
+                        console.log('your given credentials did not matched!');
                     }
                 }
             }

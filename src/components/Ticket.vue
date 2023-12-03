@@ -8,7 +8,7 @@
                         <p>Name : <span class="chlidauth">{{ authuser }}</span></p>
                         <button v-on:click="logout">
                             <span class="material-symbols-outlined">
-                            logout
+                                logout
                             </span>
                             Logout
                         </button>
@@ -270,7 +270,7 @@ export default {
             ],
             username: "",
             contact: "",
-            authuser : ""
+            authuser: ""
         }
     },
     methods: {
@@ -347,13 +347,14 @@ export default {
     },
     mounted() {
         let getData = localStorage.getItem('users')
-        let selectAuth = JSON.parse(localStorage.getItem('users'))
-        this.authuser = selectAuth.name
         if (!getData) {
             this.$router.push({
                 name: "Registration"
             })
         } else {
+            let selectAuth = JSON.parse(localStorage.getItem('users'))
+            this.authuser = selectAuth.name
+
             this.$router.push({
                 name: "Ticket"
             })
@@ -380,22 +381,26 @@ export default {
 .bus .title {
     text-align: center;
 }
-.bus .title .auth{
+
+.bus .title .auth {
     display: flex;
     /* sakdfjsdf */
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
-.bus .title .auth p{
+
+.bus .title .auth p {
     font-size: 20px;
     font-weight: 600;
 }
-.bus .title .auth .chlidauth{
+
+.bus .title .auth .chlidauth {
     color: #557C55;
     text-transform: uppercase;
 }
-.bus .title .auth button{
+
+.bus .title .auth button {
     padding: 15px 20px;
     background: #B31312;
     color: #fff;

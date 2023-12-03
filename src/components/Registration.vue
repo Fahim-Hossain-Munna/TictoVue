@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="right">
-            <img src="../assets/images/bus.jpg" />
+            <img src="../../public/assets/images/bus.jpg" />
             <div class="overlay"></div>
         </div>
     </div>
@@ -68,7 +68,9 @@ export default {
                         "email": this.email,
                         "password": this.password,
                     }))
-                    this.$router.push('/login')
+                    this.$router.push({
+                        name: "Login"
+                    })
                 }
             }
         }
