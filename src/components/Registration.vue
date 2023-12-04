@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="right">
-            <img src="../../public/assets/images/bus.jpg" />
+            <!-- <img src="../../assets/images/bus.jpg" /> -->
             <div class="overlay"></div>
         </div>
     </div>
