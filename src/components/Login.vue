@@ -1,33 +1,35 @@
+
+
 <template>
-<div>
-    <div class="main">
-        <div class="right">
-            <img src="../../public/assets/images/bus.jpg" />
-            <div class="overlay"></div>
-        </div>
-        <div class="left">
-            <h2>Welcome To <span>Ticto.</span></h2>
-            <h3>Sign In</h3>
-            <span class="login-page">
-                <!-- don't have an account ? <a href="/register">Sign up</a> -->
-                don't have an account ? <router-link to="/register">Sign up</router-link>
-            </span>
-            <div class="form">
-                <label>Email</label>
-                <input type="email" placeholder="Email here" v-model="email" />
-                <div class="error" v-if="email == '' ">
-                    <p>{{ errors.emailError }}</p>
+    <div>
+        <div class="main">
+            <div class="right">
+                <img src="/assets/Images/bus.jpg" />
+                <div class="overlay"></div>
+            </div>
+            <div class="left">
+                <h2>Welcome To <span>Ticto.</span></h2>
+                <h3>Sign In</h3>
+                <span class="login-page">
+                    <!-- don't have an account ? <a href="/register">Sign up</a> -->
+                    don't have an account ? <router-link to="/register">Sign up</router-link>
+                </span>
+                <div class="form">
+                    <label>Email</label>
+                    <input type="email" placeholder="Email here" v-model="email" />
+                    <div class="error" v-if="email == ''">
+                        <p>{{ errors.emailError }}</p>
+                    </div>
+                    <label>Password</label>
+                    <input type="password" placeholder="Password here" v-model="password" />
+                    <div class="error" v-if="password == ''">
+                        <p>{{ errors.passwordError }}</p>
+                    </div>
+                    <button v-on:click="login"><span>Sign In</span></button>
                 </div>
-                <label>Password</label>
-                <input type="password" placeholder="Password here" v-model="password" />
-                <div class="error" v-if="password == '' ">
-                    <p>{{ errors.passwordError }}</p>
-                </div>
-                <button v-on:click="login"><span>Sign In</span></button>
             </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
